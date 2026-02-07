@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS links (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_link TEXT NOT NULL,
+    short_link VARCHAR(10) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    clicks INTEGER DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_short_code ON links(short_link);
